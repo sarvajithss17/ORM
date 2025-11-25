@@ -45,6 +45,7 @@ admin.site.register(Cars,CarAdmin)
 
 class CarAdmin(admin.ModelAdmin):
     list_display=('reg_no','name','price','year')
+```
 
 
 ## OUTPUT

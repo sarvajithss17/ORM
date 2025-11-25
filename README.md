@@ -1,5 +1,5 @@
 # Ex02 Django ORM Web Application
-## Date: 
+## Date: 24.11.2025
 
 ## AIM
 To develop a Django application to store and retrieve data from a Car Inventory Database using Object Relational Mapping(ORM).
@@ -23,13 +23,33 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+```
+models.py
 
+from django.db import models
+from django.contrib import admin
+class Cars(models.Model):
+    reg_no=models.CharField(max_length=20)
+    name=models.CharField(max_length=100)
+    price=models.IntegerField()
+    year=models.IntegerField()
+class CarAdmin(admin.ModelAdmin):
+    list_display=('reg_no','name','price','year')
+
+admin.py
+
+
+from django.contrib import admin
+from .models import Cars,CarAdmin
+admin.site.register(Cars,CarAdmin)
+
+class CarAdmin(admin.ModelAdmin):
+    list_display=('reg_no','name','price','year')
 
 
 ## OUTPUT
-
-Include the screenshot of your admin page.
+![alt text](image.png)
 
 
 ## RESULT
-Thus the program for creating car inventory database database using ORM hass been executed successfully
+Thus the program for creating car inventory database database using ORM has been executed successfully
